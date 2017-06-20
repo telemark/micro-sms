@@ -1,0 +1,62 @@
+{
+  "name": "micro-sms",
+  "description": "Service for checking if Portalen is live",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
+  "author": {
+    "name": "Geir Gåsodden",
+    "email": "geir.gasodden@pythonia.no",
+    "url": "https://github.com/zrrrzzt"
+  },
+  "main": "index.js",
+  "engines": {
+    "node": ">=8.1.2"
+  },
+  "scripts": {
+    "test": "standard && nsp check && ava",
+    "test-offline": "standard && ava",
+    "coverage": "nyc ava",
+    "coveralls": "nyc ava && nyc report --reporter=lcov && cat coverage/lcov.info | coveralls",
+    "standard-fix": "standard --fix",
+    "start": "micro",
+    "now-deploy": "npm test && now --npm && now alias"
+  },
+  "keywords": [
+    "microservice",
+    "micro",
+    "sms",
+    "Telemark fylkeskommune"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/telemark/micro-sms.git"
+  },
+  "bugs": {
+    "url": "https://github.com/telemark/micro-sms/issues"
+  },
+  "homepage": "https://github.com/telemark/micro-sms",
+  "now": {
+    "alias": [
+      "sms.service.t-fk.no"
+    ],
+    "type": "npm"
+  },
+  "devDependencies": {
+    "axios": "0.16.2",
+    "ava": "0.19.1",
+    "coveralls": "2.13.1",
+    "nsp": "2.6.3",
+    "nyc": "11.0.2",
+    "standard": "10.0.2",
+    "test-listen": "1.0.2"
+  },
+  "dependencies": {
+    "jsonwebtoken": "7.4.1",
+    "marked": "0.3.6",
+    "micro": "7.3.3",
+    "pswincom-gateway": "1.4.0",
+    "winston": "2.3.1",
+    "winston-papertrail": "1.0.5"
+  }
+}
