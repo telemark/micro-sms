@@ -23,6 +23,10 @@ Send sms
 }
 ```
 
+```bash
+$ curl -v -H "Authorization: <INSERT TOKEN>" -d '{ "sender": "A Book", "receivers": ["+4798765432"], "message": "Do you read me?" }' https://sms.service.io/sms
+```
+
 ## License
 
 [MIT](LICENSE)
