@@ -15,6 +15,9 @@ module.exports = async (request, response) => {
     const data = request.method === 'POST' ? await json(request) : query
     const verified = await verifyJwt(request)
     logger('info', ['index', 'sms', 'sender', data.sender, 'receivers', data.receivers, 'start'])
+    response.setHeader('Access-Control-Allow-Origin', '*')
+    response.setHeader('Access-Control-Allow-Methods', 'GET, POST')
+    response.setHeader('Access-Control-Allow-Headers', 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With')
     if (verified.isValid === true) {
       logger('info', ['index', 'sms', 'sender', data.sender, 'receivers', data.receivers, 'verified'])
       try {
