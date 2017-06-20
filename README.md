@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/telemark/mmicro-sms.svg?branch=master)](https://travis-ci.org/telemark/micro-sms)
+[![Build Status](https://travis-ci.org/telemark/micro-sms.svg?branch=master)](https://travis-ci.org/telemark/micro-sms)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
 [![Greenkeeper badge](https://badges.greenkeeper.io/telemark/micro-sms.svg)](https://greenkeeper.io/)
 
