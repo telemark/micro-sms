@@ -44,7 +44,7 @@
   },
   "devDependencies": {
     "axios": "0.16.2",
-    "ava": "0.21.0",
+    "ava": "0.22.0",
     "coveralls": "2.13.1",
     "nsp": "2.7.0",
     "nyc": "11.1.0",
