@@ -52,7 +52,7 @@
     "test-listen": "1.0.2"
   },
   "dependencies": {
-    "jsonwebtoken": "8.0.0",
+    "jsonwebtoken": "8.0.1",
     "marked": "0.3.6",
     "micro": "8.0.3",
     "pswincom-gateway": "1.4.0",
