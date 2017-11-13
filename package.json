@@ -43,7 +43,7 @@
     "type": "npm"
   },
   "devDependencies": {
-    "axios": "0.17.0",
+    "axios": "0.17.1",
     "ava": "0.23.0",
     "coveralls": "3.0.0",
     "nsp": "2.8.1",
