@@ -1,5 +1,3 @@
-'use strict'
-
 const readFileSync = require('fs').readFileSync
 const marked = require('marked')
 const { parse } = require('url')
