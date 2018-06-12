@@ -58,7 +58,7 @@
   "dependencies": {
     "jsonwebtoken": "8.2.1",
     "marked": "0.4.0",
-    "micro": "9.3.1",
+    "micro": "9.3.2",
     "pswincom-gateway": "1.4.0",
     "winston": "2.4.3",
     "winston-papertrail": "1.0.5"
