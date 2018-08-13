@@ -1,7 +1,7 @@
 {
   "name": "micro-sms",
   "description": "Service for checking if Portalen is live",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "license": "MIT",
   "private": true,
   "author": {
