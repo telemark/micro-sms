@@ -11,7 +11,7 @@
   },
   "main": "index.js",
   "engines": {
-    "node": ">=8.9.4"
+    "node": ">=10.7.0"
   },
   "scripts": {
     "test": "standard && nsp check && ava",
@@ -43,7 +43,10 @@
       "sms.service.t-fk.no"
     ],
     "type": "npm",
-    "dotenv": "production.env"
+    "dotenv": "production.env",
+    "engines": {
+      "node": ">=10.7.0"
+    }
   },
   "devDependencies": {
     "ava": "0.25.0",
