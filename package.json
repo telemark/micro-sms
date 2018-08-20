@@ -1,7 +1,7 @@
 {
   "name": "micro-sms",
   "description": "Service sending sms",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "license": "MIT",
   "private": true,
   "author": {
