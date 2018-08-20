@@ -1,5 +1,3 @@
-'use strict'
-
 const sendSms = require('pswincom-gateway').sendSms
 const logger = require('./logger')
 const config = require('../config')

@@ -1,38 +1,27 @@
-const readFileSync = require('fs').readFileSync
-const marked = require('marked')
-const { parse } = require('url')
-const { json, send } = require('micro')
-const verifyJwt = require('./lib/verify-jwt')
-const sendSms = require('./lib/send-sms')
-const logger = require('./lib/logger')
+const Router = require('router')
+const finalhandler = require('finalhandler')
+const cors = require('cors')
+const jwt = require('express-jwt')
 
-module.exports = async (request, response) => {
-  const { pathname, query } = await parse(request.url, true)
+// Utilities
+const handler = require('./lib/handler')
+const config = require('./config')
+const handleUnauthorized = require('./lib/handle-unauthorized')
 
-  if (pathname === '/sms') {
-    const data = request.method === 'POST' ? await json(request) : query
-    const verified = await verifyJwt(request)
-    logger('info', ['index', 'sms', 'sender', data.sender, 'receivers', data.receivers, 'start'])
-    response.setHeader('Access-Control-Allow-Origin', '*')
-    response.setHeader('Access-Control-Allow-Methods', 'GET, POST')
-    response.setHeader('Access-Control-Allow-Headers', 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With')
-    if (verified.isValid === true) {
-      logger('info', ['index', 'sms', 'sender', data.sender, 'receivers', data.receivers, 'verified'])
-      try {
-        const result = await sendSms(data)
-        logger('info', ['index', 'sms', 'sender', data.sender, 'receivers', data.receivers, 'success'])
-        send(response, 200, result)
-      } catch (error) {
-        logger('error', ['index', 'sms', 'sender', data.sender, 'receivers', data.receivers, error])
-        send(response, 500, error)
-      }
-    } else {
-      logger('error', ['index', 'sms', 'sender', data.sender, 'receivers', data.receivers, 'Invalid token'])
-      send(response, 401, new Error('Invalid token'))
-    }
-  } else {
-    const readme = readFileSync('./README.md', 'utf-8')
-    const html = marked(readme)
-    send(response, 200, html)
-  }
+// Initialize a new router
+const router = Router()
+
+// CORS
+router.use(cors())
+
+// JWT
+router.use(jwt({secret: config.JWT_SECRET}).unless({path: ['/']}))
+router.use(handleUnauthorized)
+
+// ROUTES
+router.get('/', handler.getFrontpage)
+router.post('/sms', handler.deliverSms)
+
+module.exports = (request, response) => {
+  router(request, response, finalhandler(request, response))
 }

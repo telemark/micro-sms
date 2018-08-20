@@ -11,6 +11,6 @@ const getUrl = fn => {
 
 test('it returns README as if /docs', async t => {
   const url = await getUrl(srv)
-  const result = await axios.get(`${url}/docs`)
+  const result = await axios.get(`${url}`)
   t.true(result.data.includes('MIT'), 'frontpage ok')
 })
