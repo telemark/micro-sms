@@ -1,6 +1,6 @@
 {
   "name": "micro-sms",
-  "description": "Service for checking if Portalen is live",
+  "description": "Service sending sms",
   "version": "1.2.1",
   "license": "MIT",
   "private": true,
@@ -9,7 +9,7 @@
     "email": "geir.gasodden@pythonia.no",
     "url": "https://github.com/zrrrzzt"
   },
-  "main": "index.js",
+  "main": "src/index.js",
   "engines": {
     "node": ">=10.9.0"
   },

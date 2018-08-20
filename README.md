@@ -29,5 +29,3 @@ $ curl -v -H "Authorization: <INSERT TOKEN>" -d '{ "sender": "A Book", "receiver
 ## License
 
 [MIT](LICENSE)
-
-![Robohash image of micro-sms](https://robots.kebabstudios.party/micro-sms.png "Robohash image of micro-sms")

@@ -10,5 +10,8 @@
       "min": 0,
       "max": "auto"
     }
+  },
+  "features": {
+    "cloud": "v2"
   }
 }

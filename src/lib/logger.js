@@ -1,7 +1,5 @@
-'use strict'
-
 const config = require('../config')
-const pkg = require('../package.json')
+const pkg = require('../../package.json')
 const winston = require('winston')
 require('winston-papertrail').Papertrail // eslint-disable-line no-unused-expressions
 
