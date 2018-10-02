@@ -10,15 +10,15 @@ module.exports = request => {
       jwt.verify(token, config.JWT_SECRET, (error, decoded) => {
         if (error) {
           logger('error', ['verify-jwt', 'jwt invalid', error])
-          resolve({isValid: false, error: JSON.stringify(error)})
+          resolve({ isValid: false, error: JSON.stringify(error) })
         } else {
           logger('info', ['verify-jwt', 'success'])
-          resolve({isValid: true})
+          resolve({ isValid: true })
         }
       })
     } else {
       logger('warn', ['verify-jwt', 'missing token'])
-      resolve({isValid: false})
+      resolve({ isValid: false })
     }
   })
 }
