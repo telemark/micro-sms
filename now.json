@@ -1,17 +1,33 @@
 {
+  "version": 2,
   "name": "micro-sms",
+  "scope": "telemark",
   "alias": [
     "sms.service.t-fk.no"
   ],
-  "type": "docker",
-  "dotenv": "production.env",
-  "scale": {
-    "bru1": {
-      "min": 0,
-      "max": "auto"
+  "builds": [
+    {
+      "src": "/index.js",
+      "use": "@now/node"
+    },
+    {
+      "src": "/*.md",
+      "use": "@now/md"
     }
-  },
-  "features": {
-    "cloud": "v2"
-  }
+  ],
+  "routes": [
+    {
+      "src": "/",
+      "dest": "/README.html"
+    },
+    {
+      "src": "/sms",
+      "dest": "/index.js",
+      "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept, Authorization",
+        "Access-Control-Allow-Methods": "POST, OPTIONS"
+      }
+    }
+  ]
 }

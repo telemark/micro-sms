@@ -1,6 +1,5 @@
 const test = require('ava')
-const pkg = require('../../package.json')
-const dependencies = pkg.dependencies || {}
+const { dependencies } = require('../../package.json')
 const dropModules = []
 const isDropped = (module) => !dropModules.includes(module)
 
