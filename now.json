@@ -5,6 +5,15 @@
   "alias": [
     "sms.service.t-fk.no"
   ],
+  "env": {
+    "NODE_ENV": "production",
+    "JWT_SECRET": "@tfk-jwt-secret",
+    "SMS_USERNAME": "@tfk-sms-username",
+    "SMS_PASSWORD": "@tfk-sms-password",
+    "PAPERTRAIL_HOSTNAME": "sms-service",
+    "PAPERTRAIL_HOST": "@tfk-papertrail-host",
+    "PAPERTRAIL_PORT": "@tfk-papertrail-port"
+  },
   "builds": [
     {
       "src": "/index.js",
