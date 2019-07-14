@@ -23,7 +23,7 @@ Send sms
 ```
 
 ```bash
-$ curl -v -H "Authorization: <INSERT TOKEN>" -d '{ "sender": "A Book", "receivers": ["+4798765432"], "message": "Do you read me?" }' https://sms.service.io/sms
+$ curl -v -H "Authorization: <INSERT TOKEN>" -H "Content-Type: application/json" -d '{ "sender": "aBook", "receivers": ["+4798765432"], "message": "Do you read me?" }' https://sms.service.io/sms
 ```
 
 ## Development
@@ -31,7 +31,7 @@ $ curl -v -H "Authorization: <INSERT TOKEN>" -d '{ "sender": "A Book", "receiver
 Requires the [ZEIT/Now](https://zeit.co/now) cli
 
 ```
-$ npm run dev
+$ now dev
 ```
 
 ## Deploy to ZEIT/Now - Manual
