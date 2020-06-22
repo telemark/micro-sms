@@ -44,7 +44,7 @@
   "dependencies": {
     "jsonwebtoken": "8.5.1",
     "pswincom-gateway": "1.4.0",
-    "winston": "2.4.4",
+    "winston": "2.4.5",
     "winston-papertrail": "1.0.5"
   }
 }
