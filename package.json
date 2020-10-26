@@ -36,7 +36,7 @@
   },
   "homepage": "https://github.com/telemark/micro-sms#readme",
   "devDependencies": {
-    "ava": "3.8.1",
+    "ava": "3.13.0",
     "coveralls": "3.1.0",
     "nyc": "15.1.0",
     "standard": "14.3.4"
